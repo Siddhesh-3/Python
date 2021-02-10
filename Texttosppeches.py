@@ -7,10 +7,10 @@ from gtts import gTTS
 import os 
   
 # The text that you want to convert to audio 
-mytext = 'Welcome to geeksforgeeks!'
+mytext = 'paytym pe doso rupay prapt hue'
   
 # Language in which you want to convert 
-language = 'en'
+language = 'hi'
   
 # Passing the text and language to the engine,  
 # here we have marked slow=False. Which tells  
