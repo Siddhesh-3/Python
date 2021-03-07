@@ -3,12 +3,15 @@ import pyautogui
 import time 
 time.sleep(0.2)
 
-for i in range(10) :
-    time.sleep(1)
-    pyautogui.typewrite('I Love You pinkyI Love You pinky')
+for i in range(100) :
+    time.sleep(0.1)
+    pyautogui.typewrite('Akshata Shinde')
     pyautogui.press('enter')
 
-for i in range(10):
-    time.sleep(1)
-    pyautogui.typewrite('I Love You pinkyI Love You pinky')
+for i in range(100):
+    time.sleep(0.1)
+    pyautogui.typewrite('Akshata Shinde')
     pyautogui.press('enter')
+ 
+    
+    
