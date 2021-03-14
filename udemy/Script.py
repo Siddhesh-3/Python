@@ -5,4 +5,4 @@ for i in new_list:
     
 #https://docs.python.org/3/library/
 
-# pip install -r "file name"     ...it install all req librarys   
+# pip install -r "file name"     ...it install all req libries   
