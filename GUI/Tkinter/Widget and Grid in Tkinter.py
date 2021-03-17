@@ -11,6 +11,14 @@ password = Label(root,text="Password :")
 user.grid()
 password.grid(row=1)
 
+#function
+
+def getvalue():
+    print(uservalue.get())
+    print(passvalue.get())
+    print(f"Password value is {passvalue.get()}")
+
+
 #classes in tkinter
   #BooleanVar,DoubleVar,IntVar,StringVar
 
@@ -23,7 +31,7 @@ passentry = Entry(root, textvariable = passvalue)
 userentry.grid(row=0,column=1)
 passentry.grid(row=1,column=1)
 
-Button(text="Submit",command=getvalue).grid()
+Button(text="Submit",command=getvalue).grid(row=3,column=1)
 
 
 
