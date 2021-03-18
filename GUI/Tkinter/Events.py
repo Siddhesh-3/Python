@@ -15,4 +15,5 @@ widget.pack()
 #event
 widget.bind('<Button-1>',func_1)
 widget.bind('<Double-1>',quit)
+
 root.mainloop()
