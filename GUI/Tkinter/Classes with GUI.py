@@ -10,7 +10,7 @@ class GUI(Tk):
     def status(self):
         self.var = StringVar()
         self.var.set("Ready")
-        self.statusbar = Label(self, textvar = self.var, relief = SUNKEN, anchor = "w")
+        self.statusbar = Label(self, textvar =s self.var, relief = SUNKEN, anchor = "w")
         self.statusbar.pack(side = BOTTOM, fill = X )
     
     def click(self):
