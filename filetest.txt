@@ -1,1 +1,2 @@
-secret_key = 12
+secret_key = 12 
+

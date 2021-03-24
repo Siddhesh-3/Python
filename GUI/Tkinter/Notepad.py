@@ -6,18 +6,66 @@ import os
 
 #function
 
-def newFile:
-    pass
+def newFile():
+    global file
+    root.title("Untitled - Notepad")
+    file = None 
+    TextArea.delete(1.0, END)
 
-def 
+def openFile():
+    global file
+    file = askopenfilename(defaultextension=".txt", filetypes=[("All Files", "*.*"), ("Text Documents", "*.txt")])
+
+    if file == "":
+        file = None
+    else:
+        root.title(os.path.basename(file) + " - Notepad")
+        TextArea.delete(1.0, END)
+        f = open(file, "r")
+        TextArea.insert(1.0, f.read())
+        f.close()
+        
+def saveFile():
+    global file 
+    
+    if file == None:
+        file = asksaveasfilename(initialfile = 'Untitled.txt', defaultextension=".txt",filetypes=[("All Files", "*.*"),("Text Documents", "*.txt")])
+        
+        if file == "":
+            file = None 
+        else:
+            # Save as a new file
+            f = open(file, "w")
+            f.write(TextArea.get(1.0, END))
+            f.close()
+            
+            root.title(os.path.basename(file) + " - Notepad")
+            showinfo("Msg","File Saved")    
+    else:
+        #save the file
+        f = open(file, "w")
+        f.write(TextArea.get(1.0, END))  
+        f.close()         
+        
+def quitApp():
+    root.destroy()
+
+def copy():
+    TextArea.event_generate(("<<Copy>>"))
+
+def cut():
+    TextArea.event_generate(("<<Cut>>"))
 
 
+def paste():
+    TextArea.event_generate(("<<Paste>>"))
 
 
+def about():
+    showinfo("Notepad","Notepad by Siddhesh v1.0")
 
 
-
-
+#
 
 if __name__ == '__main__':
     #basic setup
@@ -29,7 +77,7 @@ if __name__ == '__main__':
     #Text area
     TextArea = Text(root, font = "lucida 13")
     file = None
-
+    TextArea.pack(expand = True , fill = BOTH)
     #Lets create menubar
     
     MenuBar = Menu(root)
@@ -61,14 +109,21 @@ if __name__ == '__main__':
     EditMenu.add_command(label = "Copy", command = copy)
     EditMenu.add_command(label = "Paste", command = paste)
     
-    EditMenu.add_cascade(label = "Edit", menu = EditMenu)
+    MenuBar.add_cascade(label = "Edit", menu = EditMenu)
     #Edit menu end
     
     #help menu start
     HelpMenu = Menu(MenuBar, tearoff = 0)
     HelpMenu.add_command(label = "About Notepad", command = about)
-    MenuBar.add_cascade(label = "Help", menu = help)
+    MenuBar.add_cascade(label = "Help", menu = HelpMenu)
     #help menu ends
-    root.congig(menu = MenuBar)
+    root.config(menu = MenuBar)
+    
+    #scroll bar
+    
+    ScrollBar = Scrollbar(TextArea)
+    ScrollBar.pack(side = RIGHT, fill = Y)
+    ScrollBar.config(command = TextArea.yview)
+    TextArea.config(yscrollcommand = ScrollBar.set)
     
     root.mainloop()
