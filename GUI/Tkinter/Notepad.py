@@ -73,7 +73,8 @@ if __name__ == '__main__':
     root = Tk()
     root.title("Untitled - Notepad")
     root.geometry("644x788")
-    
+    #icon
+    root.wm_iconbitmap("page.ico") #add icon 
     #Text area
     TextArea = Text(root, font = "lucida 13")
     file = None
