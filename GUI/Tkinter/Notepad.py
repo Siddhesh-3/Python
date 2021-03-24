@@ -65,7 +65,7 @@ def about():
     showinfo("Notepad","Notepad by Siddhesh v1.0")
 
 
-#
+#gui part
 
 if __name__ == '__main__':
     #basic setup
@@ -125,5 +125,7 @@ if __name__ == '__main__':
     ScrollBar.pack(side = RIGHT, fill = Y)
     ScrollBar.config(command = TextArea.yview)
     TextArea.config(yscrollcommand = ScrollBar.set)
+    
+    
     
     root.mainloop()
