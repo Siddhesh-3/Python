@@ -72,7 +72,7 @@ if __name__ == '__main__':
     
     root = Tk()
     root.title("Untitled - Notepad")
-    root.geometry("644x788")
+    root.geometry("644x688")
     #icon
     root.wm_iconbitmap("page.ico") #add icon 
     #Text area
@@ -80,7 +80,6 @@ if __name__ == '__main__':
     file = None
     TextArea.pack(expand = True , fill = BOTH)
     #Lets create menubar
-    
     MenuBar = Menu(root)
     #File menu start
     FileMenu = Menu(MenuBar, tearoff = 0)
