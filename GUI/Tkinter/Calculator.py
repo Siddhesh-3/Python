@@ -97,7 +97,7 @@ b = Button(text="%", padx=15, pady=13, font="lucida 25 bold")
 b.place(x=410, y = 180)
 b.bind("<Button-1>", click)
 
-b = Button(text="=", padx=20, pady=13, font="lucida 25 bold")
+b = Button(text="=", padx=20, pady=13, font="lucida 25 bold" ,bg="green")
 b.place(x=510, y = 180)
 b.bind("<Button-1>", click)
 
@@ -119,7 +119,7 @@ b = Button( text="3", padx=23, pady=13, font="lucida 25 bold")
 b.place(x=210, y = 280)
 b.bind("<Button-1>", click)
 
-b = Button(text="C", padx=20, pady=13, font="lucida 25 bold")
+b = Button(text="C", padx=20, pady=13, font="lucida 25 bold",bg = "red")
 b.place(x=310, y = 280)
 b.bind("<Button-1>", click)
 
