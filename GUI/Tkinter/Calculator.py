@@ -135,6 +135,9 @@ b.bind("<Button-1>", click)
 f.pack()
 
 
+Heading = Label(root ,text = "Calculator Made By Siddhesh",font="lucida 15 bold")
+Heading.pack(side = BOTTOM)
+
 
 
 
