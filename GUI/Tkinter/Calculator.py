@@ -1,6 +1,6 @@
 
 from tkinter import *
-
+import time
 root = Tk()
 root.geometry("644x470")
 root.title("Calculator By CodeWithHarry")
@@ -13,6 +13,7 @@ def click(event):
     global scvalue
     text = event.widget.cget("text")
     if text == "=":
+        
         if scvalue.get().isdigit():
             value = int(scvalue.get())
         else:
@@ -21,7 +22,7 @@ def click(event):
 
             except Exception as e:
                 print(e)
-                value = "Error"
+                value = "Please Enter Values"
 
 
         scvalue.set(value)
